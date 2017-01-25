@@ -5,6 +5,7 @@ namespace App\Controllers;
 use Core\BaseController;
 use Core\Container;
 use App\ProxyClass;
+use Core\Redirect;
 
 class HomeController extends BaseController {
     
@@ -14,7 +15,7 @@ class HomeController extends BaseController {
         parent::__construct();
         $this->modelUsuario = Container::getModel("Usuario");
         if ($this->modelUsuario->isLogged() == false) {
-            header("Location: /login");
+            Redirect::route('/login');
             exit;
         }
     }
