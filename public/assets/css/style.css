@@ -1,3 +1,24 @@
 @import "bootstrap.min.css";
 
+#div_login {
+    margin-left: 33%;
+    margin-top: 10%;
+}
+#div_erro_login {
+    text-align: center;
+}
+#div_cadastro {
+    margin-left: 28%;
+    margin-top: 10%;
+}
+
+.erro_validacao {
+    color: red;
+    font-size: 12px;
+}
+.msg_dados_salvos_sucesso {
+    color: green;
+    font-size: 12px;
+}
+
 
