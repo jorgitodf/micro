@@ -21,9 +21,6 @@ class HomeController extends BaseController {
     
     public function index() {
         $this->setPageTitle('Home');
-        if (isset($_POST['email']) && isset($_POST['senha'])) {
-        }
-        $this->renderView('login/login', 'layout');
-    
+        $this->renderView('home/index', 'layout');
     }
 }

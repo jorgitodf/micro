@@ -26,7 +26,7 @@ class DataBase implements IDataBaseInfo {
                 $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);       
                 return $pdo;
             } catch (PDOException $exc) {
-                echo Container::verificaErroDataBaseConnection($exc->getCode());
+                echo Container::verificaErroDataBaseConnection($exc->getCode(), self::$db);
                 exit;
                 //echo $exc->getMessage();    
             }

@@ -22,9 +22,9 @@ class Container {
         }
     }
     
-    public static function verificaErroDataBaseConnection($code) {
+    public static function verificaErroDataBaseConnection($code, $db) {
         if ($code == 1049) {
-            $msgErro = "<h3>O Banco de Dados <b>test</b> não Existe... </h3><br/>";
+            $msgErro = "<h3>O Banco de Dados <b>{$db}</b> não Existe... </h3><br/>";
         } elseif ($code == 1045) {
             $msgErro = "<h3>O Usuário ou a Senha do Banco de Dados não Confere(m)...</h3><br/>";
         }

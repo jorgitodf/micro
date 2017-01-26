@@ -47,6 +47,7 @@ class Route {
                 break;
             }
         }
+        
         if ($encontrada) {
             $controller = Container::newController($controller);
             switch(count($param)) {

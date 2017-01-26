@@ -60,8 +60,18 @@ abstract class BaseModel implements InterfaceDataBase {
         }
         
     } 
+    
     public function existeEmailSenha($email) {
         $stmt = $this->pdo->prepare("SELECT senha FROM {$this->table} WHERE email = ?");
+        $stmt->bindValue(1, $email, PDO::PARAM_STR);
+        $stmt->execute();
+        $result = $stmt->fetch();
+        $stmt->closeCursor();
+        return $result;
+    } 
+    
+    public function getUsuarioById($email) {
+        $stmt = $this->pdo->prepare("SELECT id_user, nome, email FROM {$this->table} WHERE email = ?");
         $stmt->bindValue(1, $email, PDO::PARAM_STR);
         $stmt->execute();
         $result = $stmt->fetch();
