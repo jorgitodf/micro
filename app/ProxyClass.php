@@ -5,34 +5,6 @@ namespace App;
 use Core\Container;
 
 abstract class ProxyClass {
-
-    public static function verificaNomeCadastro($nome) {
-        if (empty($nome) || $nome = "") {
-            return $msg = "<span class='erro_validacao'>Preencha o seu Nome Completo</span>";
-        } elseif (is_numeric($nome)) {
-            return $msg = "<span class='erro_validacao'>O Campo Nome não aceita Números</span>";
-        } else {
-            return false;
-        }
-    }
-    
-    public static function verificaSenhaCadastro($senha) {
-        if (empty($senha) || $senha = "") {
-            return $msg = "<span class='erro_validacao'>Preencha a sua Senha</span>";
-        } else {
-            return false;
-        }
-    }
-    
-    public static function verificaEmailCadastro($email) {
-        if (empty($email) || $email = "") {
-            return $msg = "<span class='erro_validacao'>Preencha o seu E-mail</span>";
-        } elseif (!filter_var($email, FILTER_SANITIZE_EMAIL)) {
-            return $msg = "<span class='erro_validacao'>O E-mail informado não é Válido</span>";
-        } else {
-            return false;
-        }
-    }
     
     public static function cryptySenha($senha) {
 	$custo = '08';

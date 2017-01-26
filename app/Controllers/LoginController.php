@@ -33,4 +33,9 @@ class LoginController extends BaseController {
         $this->renderView('login/login', 'layout');
     }
     
+    public function logout() {
+        unset($_SESSION['ccUser']);
+        Redirect::route('/home');
+    }
+    
 }

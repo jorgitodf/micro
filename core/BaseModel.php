@@ -4,7 +4,6 @@ namespace Core;
 
 use PDO;
 use Core\InterfaceDataBase;
-use App\ProxyClass;
 
 abstract class BaseModel implements InterfaceDataBase {
     
@@ -58,7 +57,6 @@ abstract class BaseModel implements InterfaceDataBase {
         } else {
             return false;
         }
-        
     } 
     
     public function existeEmailSenha($email) {

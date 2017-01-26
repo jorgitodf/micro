@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use Core\BaseController;
 use Core\Container;
+use Core\Redirect;
 
 class PostsController extends BaseController {
     
@@ -12,6 +13,11 @@ class PostsController extends BaseController {
     public function __construct() {
         parent::__construct();
         $this->modelPost = Container::getModel("Post");
+        $this->modelUsuario = Container::getModel("Usuario");
+        if ($this->modelUsuario->isLogged() == false) {
+            Redirect::route('/login');
+            exit;
+        }
     }
         
     public function index() {

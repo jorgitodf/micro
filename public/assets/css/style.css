@@ -21,4 +21,15 @@
     font-size: 12px;
 }
 
+#div_pg_404 {
+    margin-left: 8%;
+    margin-top: 3%;
+}
+#btn_sair_pag_404 {
+    float: right;
+    margin-top: 1%;
+}
 
+.tam_btn {
+    width: 150%;
+}
