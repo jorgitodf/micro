@@ -46,4 +46,12 @@ class LoginController extends BaseController {
         Redirect::route('/home');
     }
     
+    public function recuperarSenha() {
+        $this->setPageTitle('Recuperar Senha');
+        if (isset($_POST['senha_rec'])) {
+            $senha_rec = trim(addslashes(filter_input(INPUT_POST, 'senha_rec', FILTER_SANITIZE_STRING)));
+        }
+        $this->renderView('login/senha', 'layout');
+    }
+    
 }

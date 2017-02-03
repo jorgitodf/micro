@@ -13,14 +13,23 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <header>
+    <header id="header">
         <?php require_once __DIR__ . "/menu.php"; ?>
     </header>
     <body>
         <main>    
         <?php $this->content(); ?>	
-        <script src="/assets/js/jquery.min.js"></script>
-        <script src="/assets/js/bootstrap.min.js"></script>
         </main>
+        
+        <script src="/assets/js/jquery-3.1.0.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>
+        <script src="/assets/js/jquery.maskMoney.js"></script>
+        <script src="/assets/js/jquery.maskedinput.js"></script>
+        <script type="text/javascript">
+            jQuery(function($){
+                $("#cpf").mask("999.999.999-99");
+                $("#tel_celular").mask("(99) 99999-9999");
+            });
+        </script>
     </body>
 </html>

@@ -17,14 +17,14 @@ abstract class ProxyClass {
         $array = array('erroSemCadastro'=>'', 'erroSenha'=>'');
         $modelUsuario = Container::getModel("Usuario");
         if ($modelUsuario->existeEmail($email) == false) {
-            $array['erroSemCadastro'] = "<span class='erro_validacao'>E-mail não Cadastrado no Sistema. Faça o seu cadastro!</span>";
+            $array['erroSemCadastro'] = "<div class='alert alert-danger' id='msg_erro_email_nao_cadastrado' role='alert'>E-mail não Cadastrado no Sistema. Faça o seu cadastro!</div>";
         } else if ($modelUsuario->existeEmailSenha($email)) {
             $senhaCadastrada = $modelUsuario->existeEmailSenha($email);
             foreach($senhaCadastrada as $value) {
                 $pass = $value;
             }
             if (ProxyClass::consultaSenhaCrypty($senha, $pass) != true) {
-                $array['erroSenha'] = "<span class='erro_validacao'>A senha digitada não confere com a senha Cadastrada!!</span>";
+                $array['erroSenha'] = "<div class='alert alert-danger' role='alert' id='msg_erro_senha_nao_confere'>A senha digitada não confere com a senha Cadastrada!!</div>";
             } 
         }
         return $array;

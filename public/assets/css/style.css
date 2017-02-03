@@ -1,35 +1,162 @@
 @import "bootstrap.min.css";
 
-#div_login {
-    margin-left: 33%;
-    margin-top: 10%;
-}
-#div_erro_login {
-    text-align: center;
-}
-#div_cadastro {
-    margin-left: 28%;
-    margin-top: 10%;
+@media (max-width: 1366px) {
+    
+    #header {
+        background-color: #A0522D;
+    }
+    #nav_bar {
+        background-color: #A0522D;
+        border: solid #A0522D;
+    }
+    #titulo_site_nav {
+        color: white;
+        font-family: Bookman;
+        font-size: 28px;
+        text-shadow: 0.1em 0.1em 0.20em #333; 
+    }
+
+    #div_login {
+        margin-left: 15%;
+        margin-top: 6%;
+    }
+    #div_cadastrar {
+        float: left;
+        border-right: solid 2px gray;
+        height: 281px;
+    }
+    #div_cadastrar > h2{
+        text-align: center;
+    }
+    #div_cadastrado {
+        float: right;
+        border-left: solid 2px gray;
+    }
+    #div_cadastrado > form > h2{
+        text-align: center;
+    }
+    #btn_login_entrar {
+        width: 100%;
+    }
+    #div_lembrar_senha > p {
+        text-align: center;
+    }
+    .msg_erro_validacao {
+        padding: 8px;
+        font-weight: bold;
+        font-size: 13px;
+        width: 80%;
+    }
+    #div_erro_login {
+        text-align: center;
+    }
+    #msg_erro_email, #msg_erro_senha {
+        margin-left: 10%;
+    }
+    #msg_erro_email_nao_cadastrado, #msg_erro_senha_nao_confere {
+        margin-left: 5%;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 12px;
+        width: 90%;
+    }
+
+    /*CADASTRO DE NOVO CLIENTE*/
+
+    #section_cadastro_cliente {
+        height: 100%;
+    }
+    #div_cadastro {
+        margin-left: 20%;
+        margin-top: 4%;
+    }
+    #panel_cadastro_cliente {
+        background-color: #A0522D;
+        color: white;
+        font-size: 15px;
+    }
+    #panel_cadastro_cliente_body {
+        border: solid #A0522D 1px;
+    }
+    #btn_cad_cliente, #btn_cad_cliente_logar {
+        width: 75px;
+    }
+    #div_botoes_cadas_cliente {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+    #msg_erro_nome_cliente, #msg_erro_nome_cliente_sem_numeros, #msg_erro_email_cad_cliente, #msg_erro_senha_cad_cliente, 
+    #msg_erro_email_cad_cliente_n_val, #msg_erro_senha2_cad_cliente, #msg_erro_telef_cad_cliente, #msg_erro_cpf_cad_cliente {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        font-weight: bold;
+        font-size: 11px;
+        width: 90%;
+        text-align: center;
+    }
+
+    #div_erros_cadas_cliente {
+        float: right;
+    }
+
+    /*PÁGINA RECUPERAR SENHA*/
+
+    #div_rec_senha {
+        margin-top: 7%;
+        margin-left: 25%;
+    }
+    #div_rec_senha_body > form > h2{
+        text-align: center;
+    }
+    #div_rec_senha_body > form > p {
+        text-align: center;
+    }
+    #input_senha_rec {
+        width: 80%;
+    }
+    #div_input_rec_senha > input {
+        text-align: center;
+        margin-left: 10%;
+    }
+    #btn_rec_senha {
+        margin-left: 10%;
+        width: 80%
+    }
+
+
+
+
+    .erro_validacao {
+        color: red;
+        font-size: 12px;
+    }
+    .msg_dados_salvos_sucesso {
+        color: green;
+        font-size: 12px;
+    }
+
+    #div_pg_404 {
+        margin-left: 8%;
+        margin-top: 3%;
+    }
+    #btn_sair_pag_404 {
+        float: right;
+        margin-top: 1%;
+    }
+
+    .tam_btn {
+        width: 150%;
+    }
+
+    .borda {
+        border: solid 1px black;
+    }
+    #section_login {
+        height: 100%;
+    }
+
 }
 
-.erro_validacao {
-    color: red;
-    font-size: 12px;
-}
-.msg_dados_salvos_sucesso {
-    color: green;
-    font-size: 12px;
-}
-
-#div_pg_404 {
-    margin-left: 8%;
-    margin-top: 3%;
-}
-#btn_sair_pag_404 {
-    float: right;
-    margin-top: 1%;
-}
-
-.tam_btn {
-    width: 150%;
+@media (min-width: 1440px) {
+    
 }

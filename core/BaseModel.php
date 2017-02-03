@@ -54,7 +54,7 @@ abstract class BaseModel implements InterfaceDataBase {
         $stmt->execute();
         $stmt->closeCursor();
         if ($stmt->rowCount() > 0) {
-            return "<span class='erro_validacao'>O E-mail informado já está cadastrado!</span>";
+            return "<span class='alert alert-danger msg_erro_validacao' role='alert' id='msg_erro_senha_cad_cliente'>O E-mail informado já está cadastrado!</span>";
         } else {
             return false;
         }

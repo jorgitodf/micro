@@ -23,9 +23,12 @@ class CadastroController extends BaseController {
             $nome = trim(addslashes(filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING)));
             $email = trim(addslashes(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING)));
             $senha = trim(addslashes(filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING)));
-            $retVal = Helpers::validaCadastroUsuario($nome, $email, $senha);
+            $senha_confirm = trim(addslashes(filter_input(INPUT_POST, 'senha_confirm', FILTER_SANITIZE_STRING)));
+            $tel_celular = trim(addslashes(filter_input(INPUT_POST, 'tel_celular', FILTER_SANITIZE_STRING)));
+            $cpf = trim(addslashes(filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_STRING)));
+            $retVal = Helpers::validaCadastroUsuario($nome, $email, $senha, $senha_confirm, Helpers::limparTelefone($tel_celular), Helpers::limparCpf($cpf));
             if ($retVal) {
-                $this->view->retorno = Helpers::validaCadastroUsuario($nome, $email, $senha);
+                $this->view->retorno = Helpers::validaCadastroUsuario($nome, $email, $senha, $senha_confirm, Helpers::limparTelefone($tel_celular), Helpers::limparCpf($cpf));
             } 
             if (($retVal['nome'] == true && $retVal['email'] == true && $retVal['senha'] == true)) {
                 $senhaHash = ProxyClass::cryptySenha($senha);
