@@ -5,6 +5,7 @@ namespace App\Controllers;
 use Core\BaseController;
 use Core\Container;
 use Core\Redirect;
+use Core\BaseModel;
 
 class HomeController extends BaseController {
     
@@ -22,5 +23,6 @@ class HomeController extends BaseController {
     public function index() {
         $this->setPageTitle('Home');
         $this->renderView('home/index', 'layout');
+        print_r(BaseModel::setLoggedUser());
     }
 }

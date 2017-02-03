@@ -5,10 +5,18 @@ namespace App\Controllers;
 use Core\BaseController;
 use App\ProxyClass;
 use Core\Helpers;
+use Core\Container;
 use Core\Redirect;
 
 
 class LoginController extends BaseController {
+    
+    private $modelUsuario;
+    
+    public function __construct() {
+        parent::__construct();
+        $this->modelUsuario = Container::getModel("Usuario");
+    }
     
     public function index() {
         $this->setPageTitle('Login');
@@ -25,7 +33,7 @@ class LoginController extends BaseController {
             } 
             if (Helpers::validaEmailSenha($email, $senha)['erroEmail'] == false && Helpers::validaEmailSenha($email, $senha)['erroSenha'] == false &&
                 ProxyClass::verificaExisteUsuarioSenha($email, $senha)['erroSemCadastro'] == false && ProxyClass::verificaExisteUsuarioSenha($email, $senha)['erroSenha'] == false &&
-                ProxyClass::criarSessaoUsuario($email) == true) {
+                ProxyClass::logarUsuario($email) == true) {
                 Redirect::route('/home');
                 exit;
             }

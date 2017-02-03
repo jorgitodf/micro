@@ -38,7 +38,7 @@ abstract class ProxyClass {
 	}
     }
     
-    public static function criarSessaoUsuario($email) {
+    public static function logarUsuario($email) {
         $_SESSION['ccUser'] = array('idUser' => '', 'nome' => '', 'email' => '');
         $modelUsuario = Container::getModel("Usuario");
         $usuario = $modelUsuario->getUsuarioById($email);

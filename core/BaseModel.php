@@ -8,6 +8,7 @@ use Core\InterfaceDataBase;
 abstract class BaseModel implements InterfaceDataBase {
     
     private $pdo;
+    private $userInfo;
     protected $table;
     
     public function __construct(PDO $pdo) {
@@ -96,6 +97,17 @@ abstract class BaseModel implements InterfaceDataBase {
     public function isLogged() {
         if(isset($_SESSION['ccUser']) && !empty($_SESSION['ccUser'])) {
             return true;
+        } else {
+            return false;
+        }
+    }
+    
+    public static function setLoggedUser() {
+        if(isset($_SESSION['ccUser']) && !empty($_SESSION['ccUser'])) {
+            foreach ($_SESSION['ccUser'] as $key => $value) {
+                $userInfo[$key] = $value;
+            }
+            return $userInfo;
         } else {
             return false;
         }

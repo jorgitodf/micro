@@ -32,6 +32,7 @@ class Route {
         
         foreach ($this->routes as $route) {
             $routeArray = explode('/', $route[0]);
+            $param = [];
             for ($index = 0; $index < count($routeArray); $index++) {
                 if ((strpos($routeArray[$index], "{") !== false) && (count($urlArray) == count($routeArray))) {
                     $routeArray[$index] = $urlArray[$index];
@@ -62,6 +63,7 @@ class Route {
                     break;
                 default:
                     $controller->$acao();
+                    break;
             }
         } else {
             Container::pageNotFound();

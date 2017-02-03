@@ -22,6 +22,8 @@ class DataBase implements IDataBaseInfo {
         $host = gethostbyaddr($_SERVER['REMOTE_ADDR']);
         if ($host == 'IOSN0006.ios.com.br') {
             $pass = self::$pass1;
+        } elseif ($host == 'JORGITO-PC') {
+            $pass = self::$pass2;
         }
         
         if (self::$driver == 'mysql') {
